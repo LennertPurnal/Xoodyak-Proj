@@ -1,7 +1,11 @@
 #include "Xoodoo.h"
 #include <stdint.h>
-#include <stdio.h>
 
+/**
+ * @brief function to initialize empty state
+ * 
+ * @param state pointer to state object
+ */
 void Xoodoo_InitEmptyState(xoodyak_state *state){
     
     for (int y = 0; y < XOODYAK_NUMOF_PLANES; y++)
@@ -11,6 +15,12 @@ void Xoodoo_InitEmptyState(xoodyak_state *state){
 
 }
 
+/**
+ * @brief function to convert 384 bit vector to xoodyak_state object
+ * 
+ * @param vector pointer to input vector
+ * @param state pointer to output state
+ */
 void Xoodoo_VectorToState(const unsigned char *vector, xoodyak_state *state){
 
     for (int y = 0; y < XOODYAK_NUMOF_PLANES; y++)
@@ -20,6 +30,12 @@ void Xoodoo_VectorToState(const unsigned char *vector, xoodyak_state *state){
 
 }
 
+/**
+ * @brief function to convert xoodyak_state object to 384 bit vector
+ * 
+ * @param state pointer to input state object
+ * @param vector pointer to output vector
+ */
 void Xoodoo_StateToVector(xoodyak_state *state, unsigned char *vector){
 
     for (int y = 0; y < XOODYAK_NUMOF_PLANES; y++)
@@ -29,6 +45,12 @@ void Xoodoo_StateToVector(xoodyak_state *state, unsigned char *vector){
 
 }
 
+/**
+ * @brief function to convert xoodyak_state object to array of 32bit words
+ * 
+ * @param state pointer to input state
+ * @param stateAsWords pointer to output array
+ */
 static void Xoodoo_StateToWords(xoodyak_state *state, uint32_t *stateAsWords){
 
     for (int y = 0; y < XOODYAK_NUMOF_PLANES; y++)
@@ -37,6 +59,12 @@ static void Xoodoo_StateToWords(xoodyak_state *state, uint32_t *stateAsWords){
 
 }
 
+/**
+ * @brief function to convert state as array of 32bit words to xoodyak_state object
+ * 
+ * @param stateAsWords pointer to input state array
+ * @param state pointer to output xoodyak_state object
+ */
 static void Xoodoo_WordsToState(uint32_t *stateAsWords, xoodyak_state *state){
 
     for (int y = 0; y < XOODYAK_NUMOF_PLANES; y++)
@@ -49,6 +77,12 @@ static void Xoodoo_WordsToState(uint32_t *stateAsWords, xoodyak_state *state){
 
 }
 
+/**
+ * @brief function to xor two xoodyak state objects, the result is written to the inout state
+ * 
+ * @param inout first input for the xor and also the result of the xor
+ * @param in2 second argument of the xor
+ */
 void Xoodoo_xorStates(xoodyak_state *inout, xoodyak_state *in2){
 
     for (int y = 0; y < XOODYAK_NUMOF_PLANES; y++)
@@ -58,6 +92,10 @@ void Xoodoo_xorStates(xoodyak_state *inout, xoodyak_state *in2){
 
 }
 
+/**
+ * @brief round constants array
+ * 
+ */
 static const uint32_t    RC[XOODYAK_ROUNDS] = {
     _rc12,
     _rc11,
@@ -73,6 +111,13 @@ static const uint32_t    RC[XOODYAK_ROUNDS] = {
     _rc1
 };
 
+
+/**
+ * @brief function for performing a single permutation round
+ * 
+ * @param stateAsWords pointer to state as array of 32bit vectors
+ * @param rc round constant
+ */
 static void Xoodoo_Round(uint32_t *stateAsWords, uint32_t rc){
 
     unsigned int x, y;
@@ -123,6 +168,11 @@ static void Xoodoo_Round(uint32_t *stateAsWords, uint32_t rc){
 
 }
 
+/**
+ * @brief main permutation function (performs 12 rounds of permutations for hashing)
+ * 
+ * @param state pointer to state object
+ */
 void Xoodoo_Permute(xoodyak_state *state){
 
     //more efficient version of state for permuting by using 32-bit words
@@ -131,11 +181,6 @@ void Xoodoo_Permute(xoodyak_state *state){
 
     for (int i = 0; i < XOODYAK_ROUNDS; i++){
         Xoodoo_Round(stateAsWords, RC[i]);
-        
-        /* for (int i = 0; i < XOODYAK_NUMOF_PLANES*XOODYAK_NUMOF_SHEETS; i++)
-            printf("0x%08x ", stateAsWords[i]);
-        printf("\n"); */
-
     }
 
     Xoodoo_WordsToState(stateAsWords, state);

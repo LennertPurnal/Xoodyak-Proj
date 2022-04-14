@@ -62,7 +62,7 @@ $(BUILDDIR)/%.o: $(SOURCEDIR)/%.c
 
 # MAIN STRUCTURE
 $(BUILDDIR)/start.o: $(SOURCEDIR)/start.S
-	$(TOOLCHAIN_PREFIX)gcc -c -march=rv32im$(subst C,c,$(COMPRESSED_ISA)) -o $@ $<
+	$(TOOLCHAIN_PREFIX)gcc -c -march=rv32i$(subst C,c,$(COMPRESSED_ISA)) -o $@ $<
 
 
 ################################################################################
