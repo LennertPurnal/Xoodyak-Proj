@@ -1,3 +1,10 @@
+--------------------------------------------------------------------------------
+--! @file       xoodoo_permute_tb.vhd
+--! @brief      testbench for xoodoo_permute module
+--!
+--! @author     Purnal Lennert
+--------------------------------------------------------------------------------
+
 library work;
     use work.xoodoo_globals.all;
 
@@ -21,7 +28,7 @@ architecture tb of xoodoo_permute_tb is
 
     component xoodoo_permute is
         port (
-            CLOCK        : in  std_logic;
+        CLOCK        : in  std_logic;
         RESET        : in  std_logic;
         cr           : in  std_logic_vector(7 downto 0);
         sr           : out std_logic_vector(7 downto 0);

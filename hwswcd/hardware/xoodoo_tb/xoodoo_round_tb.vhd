@@ -1,3 +1,10 @@
+--------------------------------------------------------------------------------
+--! @file       xoodoo_round_tb.vhd
+--! @brief      testbench for xoodoo_round module
+--!
+--! @author     Purnal Lennert
+--------------------------------------------------------------------------------
+
 library work;
     use work.xoodoo_globals.all;
 

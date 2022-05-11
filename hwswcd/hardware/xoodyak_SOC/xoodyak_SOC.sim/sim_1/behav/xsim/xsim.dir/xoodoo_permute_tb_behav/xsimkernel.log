@@ -2,3 +2,6 @@ Running: xsim.dir/xoodoo_permute_tb_behav/xsimk -simmode gui -wdb xoodoo_permute
 Design successfully loaded
 Design Loading Memory Usage: 32832 KB (Peak: 32840 KB)
 Design Loading CPU Usage: 20 ms
+Simulation completed
+Simulation Memory Usage: 114352 KB (Peak: 172100 KB)
+Simulation CPU Usage: 850 ms

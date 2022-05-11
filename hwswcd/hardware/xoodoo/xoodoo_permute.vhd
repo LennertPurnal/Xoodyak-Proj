@@ -46,14 +46,6 @@ architecture Behavioral of xoodoo_permute is
             state_out    : out x_state_type
         );
     end component;
-
---    component blk_mem_round_constants is
---        port (
---          clka  : in std_logic;
---          addra : in std_logic_vector(3 downto 0);
---          douta : out std_logic_vector(31 downto 0)
---        );
---    end component; 
     
 begin 
 
@@ -137,14 +129,6 @@ begin
             state_out => state_out_i,
             rc => rc_i
         );
-
-    --round constants memory block
---    round_constants_inst00 : component blk_mem_round_constants
---        port map(
---            clka => CLOCK,
---            addra => round_reg,
---            douta => rc_i
---        ); 
 
     --round constants decoder
     rc_i <= x"00000012" when round_reg = x"0" else

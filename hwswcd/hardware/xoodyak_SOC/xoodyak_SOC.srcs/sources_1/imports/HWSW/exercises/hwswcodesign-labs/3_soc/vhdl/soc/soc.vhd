@@ -137,8 +137,9 @@ begin
         PRDATA => PRDATA_COMP_2_i,
         PSLVERR => PSLVERR_COMP_2_i
     );
-    
-    APB_dummy_inst00: component APB_dummy generic map(
+ 
+ 
+    APB_xoodyak_inst00: component APB_counter generic map(
         G_BASE_ADDRESS => C_BASE_ADDRESS_3,
         G_HIGH_ADDRESS => C_HIGH_ADDRESS_3) 
     port map(

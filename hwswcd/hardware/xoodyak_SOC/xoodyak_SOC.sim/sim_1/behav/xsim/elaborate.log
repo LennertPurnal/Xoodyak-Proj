@@ -1,8 +1,9 @@
 Vivado Simulator v2021.2
 Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
-Running: /tools/Xilinx/Vivado/2021.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip -L xpm --snapshot xoodoo_permute_tb_behav xil_defaultlib.xoodoo_permute_tb -log elaborate.log 
+Running: /tools/Xilinx/Vivado/2021.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot soc_tb_behav xil_defaultlib.soc_tb xil_defaultlib.glbl -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
+Pass Through NonSizing Optimizer
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -10,12 +11,20 @@ Time Resolution for simulation is 1ps
 Compiling package std.standard
 Compiling package std.textio
 Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package xil_defaultlib.pkg_hwswcodesign
 Compiling package synopsys.attributes
 Compiling package ieee.std_logic_misc
-Compiling package ieee.std_logic_arith
-Compiling package xil_defaultlib.xoodoo_globals
-Compiling package ieee.std_logic_unsigned
-Compiling architecture rtl of entity xil_defaultlib.xoodoo_round [xoodoo_round_default]
-Compiling architecture behavioral of entity xil_defaultlib.xoodoo_permute [xoodoo_permute_default]
-Compiling architecture tb of entity xil_defaultlib.xoodoo_permute_tb
-Built simulation snapshot xoodoo_permute_tb_behav
+Compiling package ieee.std_logic_textio
+Compiling package vl.vl_types
+Compiling module xil_defaultlib.glbl
+Compiling architecture behavioural of entity xil_defaultlib.APB_counter [\APB_counter(g_base_address="100...]
+Compiling architecture behavioural of entity xil_defaultlib.APB_counter [\APB_counter(g_base_address="100...]
+Compiling architecture behavioural of entity xil_defaultlib.apb_bus [\apb_bus(g_high_address_0="00000...]
+Compiling architecture behavioural of entity xil_defaultlib.picorv32_apb_adapter [picorv32_apb_adapter_default]
+Compiling module xil_defaultlib.picorv32(ENABLE_COUNTERS=1'b1,EN...
+Compiling architecture behavioural of entity xil_defaultlib.soc [soc_default]
+Compiling architecture behavioural of entity xil_defaultlib.picorv_APB_mem_model [\picorv_APB_mem_model(g_high_add...]
+Compiling architecture behavioural of entity xil_defaultlib.APB_print [\APB_print(g_base_address="10000...]
+Compiling architecture behavioural of entity xil_defaultlib.soc_tb
+Built simulation snapshot soc_tb_behav

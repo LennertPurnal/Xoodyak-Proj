@@ -1,9 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../../xoodoo/xoodoo_globals.vhd" \
-"../../../../../xoodoo/xoodoo_permute.vhd" \
-"../../../../../xoodoo/xoodoo_round.vhd" \
-"../../../../../xoodoo_tb/xoodoo_permute_tb.vhd" \
-
-# Do not sort compile order
-nosort
