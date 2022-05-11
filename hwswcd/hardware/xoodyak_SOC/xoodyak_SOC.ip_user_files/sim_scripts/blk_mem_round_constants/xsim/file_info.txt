@@ -1,0 +1,2 @@
+blk_mem_round_constants.v,verilog,xil_defaultlib,../../../../xoodyak_SOC.gen/sources_1/ip/blk_mem_round_constants/sim/blk_mem_round_constants.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

@@ -1,0 +1,10 @@
+0.7
+2020.2
+Oct 19 2021
+02:56:52
+/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodoo/xoodoo_globals.vhd,1652213975,vhdl,/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodoo/xoodoo_permute.vhd;/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodoo_tb/xoodoo_permute_tb.vhd,,,xoodoo_globals,,,,,,,,
+/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodoo/xoodoo_permute.vhd,1652291370,vhdl,,,,xoodoo_permute,,,,,,,,
+/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodoo/xoodoo_round.vhd,1652213518,vhdl,,,,xoodoo_round,,,,,,,,
+/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodoo_tb/xoodoo_permute_tb.vhd,1652291405,vhdl,,,,xoodoo_permute_tb,,,,,,,,
+/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.gen/sources_1/ip/blk_mem_round_constants/sim/blk_mem_round_constants.v,1652279951,verilog,,,,blk_mem_round_constants,,,,,,,,
+/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.sim/sim_1/behav/xsim/glbl.v,1634335545,verilog,,,,glbl,,,,,,,,
