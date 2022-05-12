@@ -193,11 +193,9 @@ void Xoodoo_Permute(xoodyak_state *state){
 }
 
 void Xoodoo_wr_state(uint32_t *state){
-
     for (int i = 0; i < XOODYAK_NUMOF_PLANES*XOODYAK_NUMOF_SHEETS; i++){
         (*(volatile unsigned long *) (XOODOO_INSTATE_ADDRESS + i*4)) = state[i];
     }
-
 }
 
 void Xoodoo_rd_state(uint32_t *state){
