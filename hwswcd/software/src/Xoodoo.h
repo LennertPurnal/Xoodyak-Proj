@@ -36,4 +36,25 @@ void Xoodoo_StateToVector(xoodyak_state *state, unsigned char *vector);
 void Xoodoo_Permute(xoodyak_state *state);
 void Xoodoo_xorStates(xoodyak_state *inout, xoodyak_state *in2);
 
+//xoodoo_permute module drivers
+#define XOODOO_BASEADDRESS      0x81100000
+#define XOODOO_CR_ADDRESS       (XOODOO_BASEADDRESS + 0*4)
+#define XOODOO_SR_ADDRESS       (XOODOO_BASEADDRESS + 1*4)
+#define XOODOO_INSTATE_ADDRESS  (XOODOO_BASEADDRESS + 2*4)
+#define XOODOO_ROUNDS_ADDRESS   (XOODOO_BASEADDRESS + 14*4)
+#define XOODOO_OUTSTATE_ADDRESS (XOODOO_BASEADDRESS + 15*4)
+
+#define XOODOO_CR               (*(volatile unsigned int *) XOODOO_CR_ADDRESS)
+#define XOODOO_SR               (*(volatile unsigned int *) XOODOO_SR_ADDRESS)
+#define XOODOO_ROUNDS           (*(volatile unsigned int *) XOODOO_ROUNDS_ADDRESS)
+
+#define XOODOO_PERMUTE_CMD      0x00000001U
+
+#define xoodoo_clear()          (XOODOO_CR &= ~XOODOO_PERMUTE_CMD)
+#define xoodoo_start()          (XOODOO_CR |=  XOODOO_PERMUTE_CMD)
+#define xoodoo_wr_rounds(rnds)  (XOODOO_ROUNDS = (int)rnds)
+
+void Xoodoo_wr_state(uint32_t *state);
+void Xoodoo_rd_state(uint32_t *state);
+
 #endif

@@ -66,9 +66,8 @@ architecture Behavioural of APB_xoodoo is
     signal state_in     : x_state_type;
     signal state_out    : x_state_type;
     signal rounds       : std_logic_vector(C_DATA_WIDTH-1 downto 0);
-    signal csr          : std_logic_vector(C_DATA_WIDTH-1 downto 0);
-    alias cr : std_logic_vector(8 downto 0) is csr(15 downto 8);
-    alias sr : std_logic_vector(8 downto 0) is csr(7 downto 0);
+    signal cr           : std_logic_vector(8 downto 0);
+    signal sr           : std_logic_vector(8 downto 0);
 
     --address mapping
     constant LOCAL_CR               : integer := x"00000000";
@@ -143,17 +142,17 @@ begin
                 case local_address is
                     when LOCAL_CR => cr <= masked_data(7 downto 0);
                     when LOCAL_INSTATE_BASE => state_in(0)(0) <= masked_data;
-                    when LOCAL_INSTATE_BASE + 4 => state_in(0)(1) <= masked_data;
-                    when LOCAL_INSTATE_BASE + 8 => state_in(0)(2) <= masked_data;
-                    when LOCAL_INSTATE_BASE + 12 => state_in(0)(3) <= masked_data;
-                    when LOCAL_INSTATE_BASE + 16 => state_in(1)(0) <= masked_data;
-                    when LOCAL_INSTATE_BASE + 20 => state_in(1)(1) <= masked_data;
-                    when LOCAL_INSTATE_BASE + 24 => state_in(1)(2) <= masked_data;
-                    when LOCAL_INSTATE_BASE + 28 => state_in(1)(3) <= masked_data;
-                    when LOCAL_INSTATE_BASE + 32 => state_in(2)(0) <= masked_data;
-                    when LOCAL_INSTATE_BASE + 36 => state_in(2)(1) <= masked_data;
-                    when LOCAL_INSTATE_BASE + 40 => state_in(2)(2) <= masked_data;
-                    when LOCAL_INSTATE_BASE + 44 => state_in(2)(3) <= masked_data;
+                    when (LOCAL_INSTATE_BASE + 4) => state_in(0)(1) <= masked_data;
+                    when (LOCAL_INSTATE_BASE + 8) => state_in(0)(2) <= masked_data;
+                    when (LOCAL_INSTATE_BASE + 12) => state_in(0)(3) <= masked_data;
+                    when (LOCAL_INSTATE_BASE + 16) => state_in(1)(0) <= masked_data;
+                    when (LOCAL_INSTATE_BASE + 20) => state_in(1)(1) <= masked_data;
+                    when (LOCAL_INSTATE_BASE + 24) => state_in(1)(2) <= masked_data;
+                    when (LOCAL_INSTATE_BASE + 28) => state_in(1)(3) <= masked_data;
+                    when (LOCAL_INSTATE_BASE + 32) => state_in(2)(0) <= masked_data;
+                    when (LOCAL_INSTATE_BASE + 36) => state_in(2)(1) <= masked_data;
+                    when (LOCAL_INSTATE_BASE + 40) => state_in(2)(2) <= masked_data;
+                    when (LOCAL_INSTATE_BASE + 44) => state_in(2)(3) <= masked_data;
                     when LOCAL_ROUNDS => rounds <= masked_data;
                     when others => null;
                 end case;
@@ -172,19 +171,20 @@ begin
             -- read operation
             if(load_reg_read = '1') then
                 case local_address is
+                    when LOCAL_CR => outgoing_data <= x"000000" & cr;
                     when LOCAL_SR => outgoing_data <= x"000000" & sr;
                     when LOCAL_OUTSTATE_BASE => outgoing_data <= state_out(0)(0);
-                    when LOCAL_OUTSTATE_BASE + 4 => outgoing_data <= state_out(0)(1);
-                    when LOCAL_OUTSTATE_BASE + 8 => outgoing_data <= state_out(0)(2);
-                    when LOCAL_OUTSTATE_BASE + 12 => outgoing_data <= state_out(0)(3);
-                    when LOCAL_OUTSTATE_BASE + 16 => outgoing_data <= state_out(1)(0);
-                    when LOCAL_OUTSTATE_BASE + 20 => outgoing_data <= state_out(1)(1);
-                    when LOCAL_OUTSTATE_BASE + 24 => outgoing_data <= state_out(1)(2);
-                    when LOCAL_OUTSTATE_BASE + 28 => outgoing_data <= state_out(1)(3);
-                    when LOCAL_OUTSTATE_BASE + 32 => outgoing_data <= state_out(2)(0);
-                    when LOCAL_OUTSTATE_BASE + 36 => outgoing_data <= state_out(2)(1);
-                    when LOCAL_OUTSTATE_BASE + 40 => outgoing_data <= state_out(2)(2);
-                    when LOCAL_OUTSTATE_BASE + 44 => outgoing_data <= state_out(2)(3);
+                    when (LOCAL_OUTSTATE_BASE + 4) => outgoing_data <= state_out(0)(1);
+                    when (LOCAL_OUTSTATE_BASE + 8) => outgoing_data <= state_out(0)(2);
+                    when (LOCAL_OUTSTATE_BASE + 12) => outgoing_data <= state_out(0)(3);
+                    when (LOCAL_OUTSTATE_BASE + 16) => outgoing_data <= state_out(1)(0);
+                    when (LOCAL_OUTSTATE_BASE + 20) => outgoing_data <= state_out(1)(1);
+                    when (LOCAL_OUTSTATE_BASE + 24) => outgoing_data <= state_out(1)(2);
+                    when (LOCAL_OUTSTATE_BASE + 28) => outgoing_data <= state_out(1)(3);
+                    when (LOCAL_OUTSTATE_BASE + 32) => outgoing_data <= state_out(2)(0);
+                    when (LOCAL_OUTSTATE_BASE + 36) => outgoing_data <= state_out(2)(1);
+                    when (LOCAL_OUTSTATE_BASE + 40) => outgoing_data <= state_out(2)(2);
+                    when (LOCAL_OUTSTATE_BASE + 44) => outgoing_data <= state_out(2)(3);
                     when others => outgoing_data <= (others => '0');
                 end case;
             else

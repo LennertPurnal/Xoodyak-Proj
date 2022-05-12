@@ -178,11 +178,28 @@ void Xoodoo_Permute(xoodyak_state *state){
     //more efficient version of state for permuting by using 32-bit words
     uint32_t stateAsWords[XOODYAK_NUMOF_PLANES*XOODYAK_NUMOF_SHEETS];
     Xoodoo_StateToWords(state, stateAsWords);
-
-    for (int i = 0; i < XOODYAK_ROUNDS; i++){
-        Xoodoo_Round(stateAsWords, RC[i]);
-    }
+    
+    xoodoo_clear();                     //initialize module
+    Xoodoo_wr_state(stateAsWords);      //write input state
+    xoodoo_wr_rounds(XOODYAK_ROUNDS);   //write amount of rounds
+    xoodoo_start();                     //start permutation
+    while(XOODOO_SR == 0){}             //check if done
+    Xoodoo_rd_state(stateAsWords);      //read output state and copy
 
     Xoodoo_WordsToState(stateAsWords, state);
 
+}
+
+void Xoodoo_wr_state(uint32_t *state){
+
+    for (int i = 0; i < XOODYAK_NUMOF_PLANES*XOODYAK_NUMOF_SHEETS; i++){
+        (*(volatile unsigned long *) (XOODOO_INSTATE_ADDRESS + i*4)) = state[i];
+    }
+
+}
+
+void Xoodoo_rd_state(uint32_t *state){
+    for (int i = 0; i < XOODYAK_NUMOF_PLANES*XOODYAK_NUMOF_SHEETS; i++){
+        state[i] = (*(volatile unsigned long *) (XOODOO_OUTSTATE_ADDRESS + i*4));
+    }
 }
