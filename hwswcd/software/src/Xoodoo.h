@@ -1,6 +1,8 @@
 #ifndef _Xoodoo_h_
 #define _Xoodoo_h_
 
+#include <stdint.h>
+
 #define XOODYAK_NUMOF_SHEETS 4 // this is the X coordinate
 #define XOODYAK_NUMOF_PLANES 3 // this is the Y coordinate
 #define XOODYAK_LANESIZE 4 // this is the Z coordinate
@@ -52,7 +54,7 @@ void Xoodoo_xorStates(xoodyak_state *inout, xoodyak_state *in2);
 
 #define xoodoo_clear()          (XOODOO_CR &= ~XOODOO_PERMUTE_CMD)
 #define xoodoo_start()          (XOODOO_CR |=  XOODOO_PERMUTE_CMD)
-#define xoodoo_wr_rounds(rnds)  (XOODOO_ROUNDS = (int)rnds)
+#define xoodoo_wr_rounds(rnds)  (XOODOO_ROUNDS = (int)rnds - 1)
 
 void Xoodoo_wr_state(uint32_t *state);
 void Xoodoo_rd_state(uint32_t *state);

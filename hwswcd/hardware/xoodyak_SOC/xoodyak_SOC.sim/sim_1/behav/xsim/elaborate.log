@@ -5,26 +5,4 @@ Using 8 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
 Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling package std.standard
-Compiling package std.textio
-Compiling package ieee.std_logic_1164
-Compiling package ieee.numeric_std
-Compiling package xil_defaultlib.pkg_hwswcodesign
-Compiling package synopsys.attributes
-Compiling package ieee.std_logic_misc
-Compiling package ieee.std_logic_textio
-Compiling package vl.vl_types
-Compiling module xil_defaultlib.glbl
-Compiling architecture behavioural of entity xil_defaultlib.APB_counter [\APB_counter(g_base_address="100...]
-Compiling architecture behavioural of entity xil_defaultlib.APB_counter [\APB_counter(g_base_address="100...]
-Compiling architecture behavioural of entity xil_defaultlib.apb_bus [\apb_bus(g_high_address_0="00000...]
-Compiling architecture behavioural of entity xil_defaultlib.picorv32_apb_adapter [picorv32_apb_adapter_default]
-Compiling module xil_defaultlib.picorv32(ENABLE_COUNTERS=1'b1,EN...
-Compiling architecture behavioural of entity xil_defaultlib.soc [soc_default]
-Compiling architecture behavioural of entity xil_defaultlib.picorv_APB_mem_model [\picorv_APB_mem_model(g_high_add...]
-Compiling architecture behavioural of entity xil_defaultlib.APB_print [\APB_print(g_base_address="10000...]
-Compiling architecture behavioural of entity xil_defaultlib.soc_tb
-Built simulation snapshot soc_tb_behav
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel

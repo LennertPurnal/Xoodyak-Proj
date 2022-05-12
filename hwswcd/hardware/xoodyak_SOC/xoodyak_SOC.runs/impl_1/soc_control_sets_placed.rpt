@@ -1,0 +1,114 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Thu May 12 14:48:34 2022
+| Host         : laptopENVY running 64-bit Ubuntu 20.04.4 LTS
+| Command      : report_control_sets -verbose -file soc_control_sets_placed.rpt
+| Design       : soc
+| Device       : xc7z020
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    36 |
+|    Minimum number of control sets                        |    36 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    41 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    36 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     3 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     2 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    29 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              93 |           54 |
+| No           | No                    | Yes                    |              43 |           18 |
+| No           | Yes                   | No                     |              75 |           21 |
+| Yes          | No                    | No                     |             221 |           83 |
+| Yes          | No                    | Yes                    |             879 |          377 |
+| Yes          | Yes                   | No                     |             184 |           54 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------+-----------------------------------------------------+----------------------------------------------------+------------------+----------------+--------------+
+| Clock Signal |                    Enable Signal                    |                  Set/Reset Signal                  | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------+-----------------------------------------------------+----------------------------------------------------+------------------+----------------+--------------+
+|  PCLK        | picorv32_inst00/mem_addr_reg[3]_0[0]                | APB_xoodyak_inst00/xoodoo_permute_inst00/PRESETn_0 |                1 |              4 |         4.00 |
+|  PCLK        | picorv32_inst00/mem_addr[31]_i_1_n_0                | picorv32_inst00/mem_wstrb[3]_i_1_n_0               |                1 |              4 |         4.00 |
+|  PCLK        | picorv32_inst00/latched_rd[4]_i_2_n_0               | picorv32_inst00/latched_rd[4]_i_1_n_0              |                1 |              5 |         5.00 |
+|  PCLK        | picorv32_inst00/cpu_state[7]_i_2_n_0                | picorv32_inst00/cpu_state[7]_i_1_n_0               |                3 |              7 |         2.33 |
+|  PCLK        | picorv32_inst00/mem_addr_reg[4]_4[0]                | APB_xoodyak_inst00/xoodoo_permute_inst00/PRESETn_0 |                2 |              8 |         4.00 |
+|  PCLK        | picorv32_inst00/is_lui_auipc_jal_jalr_addi_add_sub0 | picorv32_inst00/decoded_imm[19]_i_1_n_0            |                4 |              8 |         2.00 |
+|  PCLK        | picorv32_inst00/is_lui_auipc_jal_jalr_addi_add_sub0 | picorv32_inst00/decoded_imm[31]_i_1_n_0            |                4 |             12 |         3.00 |
+|  PCLK        | picorv32_inst00/mem_rdata_q[31]_i_1_n_0             |                                                    |                7 |             22 |         3.14 |
+|  PCLK        | picorv32_inst00/is_lui_auipc_jal_jalr_addi_add_sub0 | APB_xoodyak_inst00/xoodoo_permute_inst00/PRESETn_0 |                7 |             22 |         3.14 |
+|  PCLK        | picorv32_inst00/mem_addr[31]_i_1_n_0                |                                                    |               13 |             30 |         2.31 |
+|  PCLK        | picorv32_inst00/is_lui_auipc_jal_jalr_addi_add_sub0 |                                                    |               14 |             30 |         2.14 |
+|  PCLK        | APB_counter_inst00/counter[30]_i_1_n_0              | APB_xoodyak_inst00/xoodoo_permute_inst00/PRESETn_0 |                8 |             31 |         3.88 |
+|  PCLK        | picorv32_inst00/mem_addr_reg[2]_1[0]                | APB_xoodyak_inst00/xoodoo_permute_inst00/PRESETn_0 |               22 |             32 |         1.45 |
+|  PCLK        | picorv32_inst00/mem_addr_reg[2]_0[0]                | APB_xoodyak_inst00/xoodoo_permute_inst00/PRESETn_0 |               18 |             32 |         1.78 |
+|  PCLK        | picorv32_inst00/mem_addr_reg[17]_0[0]               | APB_xoodyak_inst00/xoodoo_permute_inst00/PRESETn_0 |               12 |             32 |         2.67 |
+|  PCLK        | picorv32_inst00/mem_addr_reg[5]_2[0]                | APB_xoodyak_inst00/xoodoo_permute_inst00/PRESETn_0 |               18 |             32 |         1.78 |
+|  PCLK        | picorv32_inst00/mem_addr_reg[4]_0[0]                | APB_xoodyak_inst00/xoodoo_permute_inst00/PRESETn_0 |               20 |             32 |         1.60 |
+|  PCLK        | picorv32_inst00/mem_addr_reg[4]_1[0]                | APB_xoodyak_inst00/xoodoo_permute_inst00/PRESETn_0 |               20 |             32 |         1.60 |
+|  PCLK        | picorv32_inst00/mem_addr_reg[5]_3[0]                | APB_xoodyak_inst00/xoodoo_permute_inst00/PRESETn_0 |               20 |             32 |         1.60 |
+|  PCLK        | picorv32_inst00/mem_addr_reg[4]_6[0]                | APB_xoodyak_inst00/xoodoo_permute_inst00/PRESETn_0 |               17 |             32 |         1.88 |
+|  PCLK        | picorv32_inst00/mem_addr_reg[5]_0[0]                | APB_xoodyak_inst00/xoodoo_permute_inst00/PRESETn_0 |               16 |             32 |         2.00 |
+|  PCLK        | picorv32_inst00/mem_addr_reg[5]_1[0]                | APB_xoodyak_inst00/xoodoo_permute_inst00/PRESETn_0 |               18 |             32 |         1.78 |
+|  PCLK        | picorv32_inst00/mem_addr_reg[4]_5[0]                | APB_xoodyak_inst00/xoodoo_permute_inst00/PRESETn_0 |               20 |             32 |         1.60 |
+|  PCLK        | picorv32_inst00/mem_wdata[31]_i_1_n_0               |                                                    |               10 |             32 |         3.20 |
+|  PCLK        | picorv32_inst00/mem_addr_reg[4]_2[0]                | APB_xoodyak_inst00/xoodoo_permute_inst00/PRESETn_0 |               19 |             32 |         1.68 |
+|  PCLK        | picorv32_inst00/E[0]                                | APB_xoodyak_inst00/xoodoo_permute_inst00/PRESETn_0 |                8 |             32 |         4.00 |
+|  PCLK        | picorv32_inst00/reg_op2[31]_i_1_n_0                 |                                                    |               10 |             32 |         3.20 |
+|  PCLK        | picorv32_inst00/reg_op1[31]_i_1_n_0                 |                                                    |               18 |             32 |         1.78 |
+|  PCLK        | picorv32_inst00/mem_addr_reg[4]_3[0]                | APB_xoodyak_inst00/xoodoo_permute_inst00/PRESETn_0 |               15 |             32 |         2.13 |
+|  PCLK        | picorv32_inst00/instr_lui0                          |                                                    |               11 |             43 |         3.91 |
+|  PCLK        | picorv32_inst00/reg_next_pc                         | APB_xoodyak_inst00/xoodoo_permute_inst00/PRESETn_0 |               18 |             62 |         3.44 |
+|  PCLK        | picorv32_inst00/count_instr                         | APB_xoodyak_inst00/xoodoo_permute_inst00/PRESETn_0 |               16 |             64 |         4.00 |
+|  PCLK        | picorv32_inst00/cpuregs_reg_r1_0_31_0_5_i_1_n_0     |                                                    |               11 |             88 |         8.00 |
+|  PCLK        |                                                     |                                                    |               54 |             93 |         1.72 |
+|  PCLK        |                                                     | APB_xoodyak_inst00/xoodoo_permute_inst00/PRESETn_0 |               39 |            118 |         3.03 |
+|  PCLK        | APB_xoodyak_inst00/xoodoo_permute_inst00/state[1]   | APB_xoodyak_inst00/xoodoo_permute_inst00/PRESETn_0 |              123 |            388 |         3.15 |
++--------------+-----------------------------------------------------+----------------------------------------------------+------------------+----------------+--------------+
+
+

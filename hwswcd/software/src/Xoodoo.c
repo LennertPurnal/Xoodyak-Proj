@@ -1,4 +1,5 @@
 #include "Xoodoo.h"
+#include "print.h"
 #include <stdint.h>
 
 /**
@@ -185,6 +186,7 @@ void Xoodoo_Permute(xoodyak_state *state){
     xoodoo_start();                     //start permutation
     while(XOODOO_SR == 0){}             //check if done
     Xoodoo_rd_state(stateAsWords);      //read output state and copy
+    xoodoo_clear();
 
     Xoodoo_WordsToState(stateAsWords, state);
 

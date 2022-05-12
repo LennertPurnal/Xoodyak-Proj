@@ -1,0 +1,556 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Thu May 12 14:47:11 2022
+# Process ID: 129143
+# Current directory: /home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.runs/synth_1
+# Command line: vivado -log soc.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source soc.tcl
+# Log file: /home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.runs/synth_1/soc.vds
+# Journal file: /home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.runs/synth_1/vivado.jou
+# Running On: laptopENVY, OS: Linux, CPU Frequency: 2000.000 MHz, CPU Physical cores: 4, Host memory: 16465 MB
+#-----------------------------------------------------------
+Sourcing tcl script '/home/lennert/.Xilinx/Vivado/Vivado_init.tcl'
+source soc.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental /home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/utils_1/imports/synth_1/soc.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/utils_1/imports/synth_1/soc.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top soc -part xc7z020clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis because the design is too small; reverting to default synthesis
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 129204
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2601.125 ; gain = 0.000 ; free physical = 2078 ; free virtual = 8805
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'soc' [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/soc/soc.vhd:49]
+	Parameter G_BASE_ADDRESS bound to: 32'b10000001000000000000000000000000 
+	Parameter G_HIGH_ADDRESS bound to: 32'b10000001000000000000111111111111 
+INFO: [Synth 8-3491] module 'APB_counter' declared at '/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/fblocks/counter/APB_counter.vhd:23' bound to instance 'APB_counter_inst00' of component 'APB_counter' [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/soc/soc.vhd:145]
+INFO: [Synth 8-638] synthesizing module 'APB_counter' [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/fblocks/counter/APB_counter.vhd:45]
+	Parameter G_BASE_ADDRESS bound to: -2130706432 - type: integer 
+	Parameter G_HIGH_ADDRESS bound to: -2130702337 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'APB_counter' (1#1) [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/fblocks/counter/APB_counter.vhd:45]
+	Parameter G_BASE_ADDRESS bound to: 32'b10000001000100000000000000000000 
+	Parameter G_HIGH_ADDRESS bound to: 32'b10000001000100000000111111111111 
+INFO: [Synth 8-3491] module 'APB_xoodoo' declared at '/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodoo/APB_xoodoo.vhd:16' bound to instance 'APB_xoodyak_inst00' of component 'APB_xoodoo' [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/soc/soc.vhd:164]
+INFO: [Synth 8-638] synthesizing module 'APB_xoodoo' [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodoo/APB_xoodoo.vhd:38]
+	Parameter G_BASE_ADDRESS bound to: -2129657856 - type: integer 
+	Parameter G_HIGH_ADDRESS bound to: -2129653761 - type: integer 
+INFO: [Synth 8-3491] module 'xoodoo_permute' declared at '/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodoo/xoodoo_permute.vhd:18' bound to instance 'xoodoo_permute_inst00' of component 'xoodoo_permute' [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodoo/APB_xoodoo.vhd:226]
+INFO: [Synth 8-638] synthesizing module 'xoodoo_permute' [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodoo/xoodoo_permute.vhd:30]
+INFO: [Synth 8-3491] module 'xoodoo_round' declared at '/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodoo/xoodoo_round.vhd:19' bound to instance 'xoodoo_round_inst00' of component 'xoodoo_round' [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodoo/xoodoo_permute.vhd:126]
+INFO: [Synth 8-638] synthesizing module 'xoodoo_round' [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodoo/xoodoo_round.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'xoodoo_round' (2#1) [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodoo/xoodoo_round.vhd:27]
+WARNING: [Synth 8-5856] 3D RAM state_in_i_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+INFO: [Synth 8-256] done synthesizing module 'xoodoo_permute' (3#1) [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodoo/xoodoo_permute.vhd:30]
+WARNING: [Synth 8-5856] 3D RAM state_in_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+INFO: [Synth 8-256] done synthesizing module 'APB_xoodoo' (4#1) [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodoo/APB_xoodoo.vhd:38]
+	Parameter G_BASE_ADDRESS_0 bound to: 32'b00000000000000000000000000000000 
+	Parameter G_HIGH_ADDRESS_0 bound to: 32'b00000000000000000011111111111111 
+	Parameter G_BASE_ADDRESS_1 bound to: 32'b10000000000000000000000000000000 
+	Parameter G_HIGH_ADDRESS_1 bound to: 32'b10000000000000000000000000000100 
+	Parameter G_BASE_ADDRESS_2 bound to: 32'b10000001000000000000000000000000 
+	Parameter G_HIGH_ADDRESS_2 bound to: 32'b10000001000000000000111111111111 
+	Parameter G_BASE_ADDRESS_3 bound to: 32'b10000001000100000000000000000000 
+	Parameter G_HIGH_ADDRESS_3 bound to: 32'b10000001000100000000111111111111 
+INFO: [Synth 8-3491] module 'apb_bus' declared at '/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/soc/APB_bus.vhd:22' bound to instance 'apb_bus_inst00' of component 'apb_bus' [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/soc/soc.vhd:185]
+INFO: [Synth 8-638] synthesizing module 'apb_bus' [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/soc/APB_bus.vhd:99]
+	Parameter G_BASE_ADDRESS_0 bound to: 0 - type: integer 
+	Parameter G_HIGH_ADDRESS_0 bound to: 16383 - type: integer 
+	Parameter G_BASE_ADDRESS_1 bound to: -2147483648 - type: integer 
+	Parameter G_HIGH_ADDRESS_1 bound to: -2147483644 - type: integer 
+	Parameter G_BASE_ADDRESS_2 bound to: -2130706432 - type: integer 
+	Parameter G_HIGH_ADDRESS_2 bound to: -2130702337 - type: integer 
+	Parameter G_BASE_ADDRESS_3 bound to: -2129657856 - type: integer 
+	Parameter G_HIGH_ADDRESS_3 bound to: -2129653761 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'apb_bus' (5#1) [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/soc/APB_bus.vhd:99]
+INFO: [Synth 8-3491] module 'picorv32_apb_adapter' declared at '/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/picorv32/picorv32_apb_adapter.vhd:22' bound to instance 'picorv32_apb_adapter_inst00' of component 'picorv32_apb_adapter' [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/soc/soc.vhd:254]
+INFO: [Synth 8-638] synthesizing module 'picorv32_apb_adapter' [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/picorv32/picorv32_apb_adapter.vhd:51]
+INFO: [Synth 8-256] done synthesizing module 'picorv32_apb_adapter' (6#1) [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/picorv32/picorv32_apb_adapter.vhd:51]
+	Parameter ENABLE_COUNTERS bound to: 1'b1 
+	Parameter ENABLE_COUNTERS64 bound to: 1'b1 
+	Parameter ENABLE_REGS_16_31 bound to: 1'b1 
+	Parameter ENABLE_REGS_DUALPORT bound to: 1'b1 
+	Parameter LATCHED_MEM_RDATA bound to: 1'b0 
+	Parameter TWO_STAGE_SHIFT bound to: 1'b1 
+	Parameter BARREL_SHIFTER bound to: 1'b0 
+	Parameter TWO_CYCLE_COMPARE bound to: 1'b0 
+	Parameter TWO_CYCLE_ALU bound to: 1'b0 
+	Parameter COMPRESSED_ISA bound to: 1'b0 
+	Parameter CATCH_MISALIGN bound to: 1'b1 
+	Parameter CATCH_ILLINSN bound to: 1'b1 
+	Parameter ENABLE_PCPI bound to: 1'b0 
+	Parameter ENABLE_MUL bound to: 1'b0 
+	Parameter ENABLE_FAST_MUL bound to: 1'b0 
+	Parameter ENABLE_DIV bound to: 1'b0 
+	Parameter ENABLE_IRQ bound to: 1'b0 
+	Parameter ENABLE_IRQ_QREGS bound to: 1'b1 
+	Parameter ENABLE_IRQ_TIMER bound to: 1'b1 
+	Parameter ENABLE_TRACE bound to: 1'b0 
+	Parameter REGS_INIT_ZERO bound to: 1'b0 
+	Parameter MASKED_IRQ bound to: 32'b00000000000000000000000000000000 
+	Parameter LATCHED_IRQ bound to: 32'b11111111111111111111111111111111 
+	Parameter PROGADDR_RESET bound to: 32'b00000000000000000000000000000000 
+	Parameter PROGADDR_IRQ bound to: 32'b00000000000000000000000000010000 
+	Parameter STACKADDR bound to: 32'b11111111111111111111111111111111 
+INFO: [Synth 8-3491] module 'picorv32' declared at '/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:62' bound to instance 'picorv32_inst00' of component 'picorv32' [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/soc/soc.vhd:276]
+INFO: [Synth 8-6157] synthesizing module 'picorv32' [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:62]
+	Parameter ENABLE_COUNTERS bound to: 1'b1 
+	Parameter ENABLE_COUNTERS64 bound to: 1'b1 
+	Parameter ENABLE_REGS_16_31 bound to: 1'b1 
+	Parameter ENABLE_REGS_DUALPORT bound to: 1'b1 
+	Parameter LATCHED_MEM_RDATA bound to: 1'b0 
+	Parameter TWO_STAGE_SHIFT bound to: 1'b1 
+	Parameter BARREL_SHIFTER bound to: 1'b0 
+	Parameter TWO_CYCLE_COMPARE bound to: 1'b0 
+	Parameter TWO_CYCLE_ALU bound to: 1'b0 
+	Parameter COMPRESSED_ISA bound to: 1'b0 
+	Parameter CATCH_MISALIGN bound to: 1'b1 
+	Parameter CATCH_ILLINSN bound to: 1'b1 
+	Parameter ENABLE_PCPI bound to: 1'b0 
+	Parameter ENABLE_MUL bound to: 1'b0 
+	Parameter ENABLE_FAST_MUL bound to: 1'b0 
+	Parameter ENABLE_DIV bound to: 1'b0 
+	Parameter ENABLE_IRQ bound to: 1'b0 
+	Parameter ENABLE_IRQ_QREGS bound to: 1'b1 
+	Parameter ENABLE_IRQ_TIMER bound to: 1'b1 
+	Parameter ENABLE_TRACE bound to: 1'b0 
+	Parameter REGS_INIT_ZERO bound to: 1'b0 
+	Parameter MASKED_IRQ bound to: 32'b00000000000000000000000000000000 
+	Parameter LATCHED_IRQ bound to: 32'b11111111111111111111111111111111 
+	Parameter PROGADDR_RESET bound to: 32'b00000000000000000000000000000000 
+	Parameter PROGADDR_IRQ bound to: 32'b00000000000000000000000000010000 
+	Parameter STACKADDR bound to: 32'b11111111111111111111111111111111 
+WARNING: [Synth 8-151] case item 1'b0 is unreachable [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1264]
+WARNING: [Synth 8-151] case item 1'b0 is unreachable [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1310]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1310]
+WARNING: [Synth 8-151] case item 1'b0 is unreachable [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1493]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1493]
+WARNING: [Synth 8-151] case item 1'b0 is unreachable [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1579]
+WARNING: [Synth 8-151] case item 1'b0 is unreachable [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1579]
+WARNING: [Synth 8-151] case item 1'b0 is unreachable [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1579]
+WARNING: [Synth 8-151] case item 1'b0 is unreachable [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1579]
+WARNING: [Synth 8-151] case item 1'b0 is unreachable [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1579]
+WARNING: [Synth 8-6014] Unused sequential element mem_la_firstword_reg_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:392]
+WARNING: [Synth 8-6014] Unused sequential element last_mem_valid_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:393]
+WARNING: [Synth 8-6014] Unused sequential element next_insn_opcode_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:433]
+WARNING: [Synth 8-6014] Unused sequential element mem_la_secondword_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:571]
+WARNING: [Synth 8-6014] Unused sequential element prefetched_high_word_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:572]
+WARNING: [Synth 8-6014] Unused sequential element q_ascii_instr_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:777]
+WARNING: [Synth 8-6014] Unused sequential element q_insn_imm_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:778]
+WARNING: [Synth 8-6014] Unused sequential element q_insn_opcode_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:779]
+WARNING: [Synth 8-6014] Unused sequential element q_insn_rs1_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:780]
+WARNING: [Synth 8-6014] Unused sequential element q_insn_rs2_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:781]
+WARNING: [Synth 8-6014] Unused sequential element q_insn_rd_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:782]
+WARNING: [Synth 8-6014] Unused sequential element dbg_next_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:783]
+WARNING: [Synth 8-6014] Unused sequential element dbg_valid_insn_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:786]
+WARNING: [Synth 8-6014] Unused sequential element cached_ascii_instr_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:791]
+WARNING: [Synth 8-6014] Unused sequential element cached_insn_imm_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:792]
+WARNING: [Synth 8-6014] Unused sequential element cached_insn_opcode_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:794]
+WARNING: [Synth 8-6014] Unused sequential element cached_insn_rs1_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:797]
+WARNING: [Synth 8-6014] Unused sequential element cached_insn_rs2_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:798]
+WARNING: [Synth 8-6014] Unused sequential element cached_insn_rd_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:799]
+WARNING: [Synth 8-6014] Unused sequential element dbg_insn_addr_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:803]
+WARNING: [Synth 8-6014] Unused sequential element clear_prefetched_high_word_q_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1288]
+WARNING: [Synth 8-6014] Unused sequential element set_mem_do_rinst_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1401]
+WARNING: [Synth 8-6014] Unused sequential element set_mem_do_rdata_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1402]
+WARNING: [Synth 8-6014] Unused sequential element set_mem_do_wdata_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1403]
+WARNING: [Synth 8-6014] Unused sequential element alu_out_0_q_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1405]
+WARNING: [Synth 8-6014] Unused sequential element alu_wait_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1408]
+WARNING: [Synth 8-6014] Unused sequential element alu_wait_2_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1409]
+WARNING: [Synth 8-6014] Unused sequential element dbg_rs1val_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1412]
+WARNING: [Synth 8-6014] Unused sequential element dbg_rs2val_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1413]
+WARNING: [Synth 8-6014] Unused sequential element dbg_rs1val_valid_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1414]
+WARNING: [Synth 8-6014] Unused sequential element dbg_rs2val_valid_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1415]
+WARNING: [Synth 8-6014] Unused sequential element next_irq_pending_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1435]
+WARNING: [Synth 8-6014] Unused sequential element decoder_trigger_q_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1442]
+WARNING: [Synth 8-6014] Unused sequential element decoder_pseudo_trigger_q_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1444]
+WARNING: [Synth 8-6014] Unused sequential element latched_trace_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1460]
+WARNING: [Synth 8-6014] Unused sequential element irq_active_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1466]
+WARNING: [Synth 8-6014] Unused sequential element irq_delay_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1467]
+WARNING: [Synth 8-6014] Unused sequential element irq_mask_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1468]
+WARNING: [Synth 8-6014] Unused sequential element irq_state_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1470]
+WARNING: [Synth 8-6014] Unused sequential element timer_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1472]
+WARNING: [Synth 8-6014] Unused sequential element current_pc_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1490]
+WARNING: [Synth 8-6014] Unused sequential element irq_pending_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1958]
+WARNING: [Synth 8-6014] Unused sequential element trace_valid_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1447]
+WARNING: [Synth 8-6014] Unused sequential element instr_ecall_ebreak_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1084]
+WARNING: [Synth 8-6014] Unused sequential element pcpi_timeout_reg was removed.  [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:1465]
+INFO: [Synth 8-6155] done synthesizing module 'picorv32' (7#1) [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/picorv32/picorv32.v:62]
+INFO: [Synth 8-256] done synthesizing module 'soc' (8#1) [/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.srcs/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/soc/soc.vhd:49]
+WARNING: [Synth 8-7129] Port pcpi_wr in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[31] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[30] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[29] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[28] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[27] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[26] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[25] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[24] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[23] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[22] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[21] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[20] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[19] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[18] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[17] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[16] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[15] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[14] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[13] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[12] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[11] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[10] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[9] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[8] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[7] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[6] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[5] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[4] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[3] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[2] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[1] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[0] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_wait in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_ready in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[31] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[30] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[29] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[28] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[27] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[26] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[25] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[24] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[23] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[22] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[21] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[20] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[19] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[18] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[17] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[16] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[15] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[14] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[13] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[12] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[11] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[10] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[9] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[8] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[7] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[6] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[5] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[4] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[3] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[2] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[1] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq[0] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PSLVERR in module picorv32_apb_adapter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_instr in module picorv32_apb_adapter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PCLK in module apb_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PRESETn in module apb_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cr[7] in module xoodoo_permute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cr[6] in module xoodoo_permute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cr[5] in module xoodoo_permute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cr[4] in module xoodoo_permute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cr[3] in module xoodoo_permute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cr[2] in module xoodoo_permute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cr[1] in module xoodoo_permute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PPROT[2] in module APB_xoodoo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PPROT[1] in module APB_xoodoo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PPROT[0] in module APB_xoodoo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PPROT[2] in module APB_counter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PPROT[1] in module APB_counter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PPROT[0] in module APB_counter is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2601.125 ; gain = 0.000 ; free physical = 2838 ; free virtual = 9568
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2601.125 ; gain = 0.000 ; free physical = 2839 ; free virtual = 9568
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2609.027 ; gain = 7.902 ; free physical = 2839 ; free virtual = 9568
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'xoodoo_permute'
+INFO: [Synth 8-802] inferred FSM for state register 'mem_state_reg' in module 'picorv32'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    init |                               00 |                               00
+                 running |                               01 |                               01
+                    done |                               10 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'xoodoo_permute'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE2 |                               00 |                               00
+                 iSTATE0 |                               01 |                               10
+                  iSTATE |                               10 |                               01
+                 iSTATE1 |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'mem_state_reg' using encoding 'sequential' in module 'picorv32'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 2609.027 ; gain = 7.902 ; free physical = 2677 ; free virtual = 9407
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 4     
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input   31 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 2     
+	   2 Input    4 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 3     
+	   3 Input      1 Bit         XORs := 128   
+	   2 Input      1 Bit         XORs := 928   
++---Registers : 
+	               36 Bit    Registers := 1     
+	               32 Bit    Registers := 42    
+	                8 Bit    Registers := 2     
+	                5 Bit    Registers := 6     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 81    
++---RAMs : 
+	             1024 Bit	(32 X 32 bit)          RAMs := 1     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 28    
+	   3 Input   32 Bit        Muxes := 14    
+	   6 Input   32 Bit        Muxes := 1     
+	   5 Input   32 Bit        Muxes := 1     
+	   4 Input   32 Bit        Muxes := 5     
+	   9 Input   32 Bit        Muxes := 2     
+	   2 Input   31 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 1     
+	   4 Input    8 Bit        Muxes := 1     
+	   7 Input    8 Bit        Muxes := 1     
+	   9 Input    8 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 1     
+	   9 Input    5 Bit        Muxes := 2     
+	   3 Input    4 Bit        Muxes := 3     
+	   5 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 2     
+	   3 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 6     
+	   9 Input    2 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 1     
+	   4 Input    1 Bit        Muxes := 6     
+	   2 Input    1 Bit        Muxes := 35    
+	   3 Input    1 Bit        Muxes := 7     
+	  15 Input    1 Bit        Muxes := 14    
+	   9 Input    1 Bit        Muxes := 25    
+	   7 Input    1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port pcpi_wr in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[31] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[30] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[29] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[28] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[27] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[26] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[25] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[24] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[23] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[22] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[21] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[20] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[19] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[18] in module picorv32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pcpi_rd[17] in module picorv32 is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:21 . Memory (MB): peak = 2609.027 ; gain = 7.902 ; free physical = 2518 ; free virtual = 9245
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++----------------+-------------+-----------+----------------------+--------------+
+|Module Name     | RTL Object  | Inference | Size (Depth x Width) | Primitives   | 
++----------------+-------------+-----------+----------------------+--------------+
+|picorv32_inst00 | cpuregs_reg | Implied   | 32 x 32              | RAM32M x 12  | 
++----------------+-------------+-----------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:21 . Memory (MB): peak = 2609.027 ; gain = 7.902 ; free physical = 2518 ; free virtual = 9245
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++----------------+-------------+-----------+----------------------+--------------+
+|Module Name     | RTL Object  | Inference | Size (Depth x Width) | Primitives   | 
++----------------+-------------+-----------+----------------------+--------------+
+|picorv32_inst00 | cpuregs_reg | Implied   | 32 x 32              | RAM32M x 12  | 
++----------------+-------------+-----------+----------------------+--------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:22 . Memory (MB): peak = 2609.027 ; gain = 7.902 ; free physical = 2523 ; free virtual = 9251
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:26 . Memory (MB): peak = 2609.027 ; gain = 7.902 ; free physical = 2541 ; free virtual = 9268
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:26 . Memory (MB): peak = 2609.027 ; gain = 7.902 ; free physical = 2541 ; free virtual = 9268
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:26 . Memory (MB): peak = 2609.027 ; gain = 7.902 ; free physical = 2541 ; free virtual = 9268
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:26 . Memory (MB): peak = 2609.027 ; gain = 7.902 ; free physical = 2541 ; free virtual = 9268
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:26 . Memory (MB): peak = 2609.027 ; gain = 7.902 ; free physical = 2541 ; free virtual = 9268
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:26 . Memory (MB): peak = 2609.027 ; gain = 7.902 ; free physical = 2541 ; free virtual = 9268
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |    91|
+|2     |LUT1     |     6|
+|3     |LUT2     |   178|
+|4     |LUT3     |   129|
+|5     |LUT4     |   730|
+|6     |LUT5     |   238|
+|7     |LUT6     |  1044|
+|8     |MUXF7    |     1|
+|9     |RAM32M   |    10|
+|10    |RAM32X1D |     4|
+|11    |FDCE     |   921|
+|12    |FDPE     |     1|
+|13    |FDRE     |   552|
+|14    |FDSE     |    21|
++------+---------+------+
+
+Report Instance Areas: 
++------+------------------------------+---------------------+------+
+|      |Instance                      |Module               |Cells |
++------+------------------------------+---------------------+------+
+|1     |top                           |                     |  3926|
+|2     |  APB_counter_inst00          |APB_counter          |   137|
+|3     |  APB_xoodyak_inst00          |APB_xoodoo           |  1838|
+|4     |    xoodoo_permute_inst00     |xoodoo_permute       |  1408|
+|5     |  picorv32_apb_adapter_inst00 |picorv32_apb_adapter |     1|
+|6     |  picorv32_inst00             |picorv32             |  1950|
++------+------------------------------+---------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:26 . Memory (MB): peak = 2609.027 ; gain = 7.902 ; free physical = 2541 ; free virtual = 9268
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 222 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:26 . Memory (MB): peak = 2609.027 ; gain = 7.902 ; free physical = 2542 ; free virtual = 9269
+Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:26 . Memory (MB): peak = 2609.035 ; gain = 7.902 ; free physical = 2542 ; free virtual = 9269
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2609.035 ; gain = 0.000 ; free physical = 2633 ; free virtual = 9360
+INFO: [Netlist 29-17] Analyzing 106 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2665.055 ; gain = 0.000 ; free physical = 2556 ; free virtual = 9283
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 14 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 10 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances
+
+Synth Design complete, checksum: 1ecb854a
+INFO: [Common 17-83] Releasing license: Synthesis
+45 Infos, 157 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:28 . Memory (MB): peak = 2665.055 ; gain = 64.031 ; free physical = 2761 ; free virtual = 9488
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Common 17-1381] The checkpoint '/home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.runs/synth_1/soc.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2860.883 ; gain = 195.828 ; free physical = 2397 ; free virtual = 9125
+INFO: [runtcl-4] Executing : report_utilization -file soc_utilization_synth.rpt -pb soc_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu May 12 14:47:58 2022...

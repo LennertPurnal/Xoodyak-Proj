@@ -4,9 +4,13 @@ vhdl xil_defaultlib  \
 "../../../../xoodyak_SOC.srcs/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/soc/APB_bus.vhd" \
 "../../../../xoodyak_SOC.srcs/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/fblocks/counter/APB_counter.vhd" \
 "../../../../xoodyak_SOC.srcs/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/fblocks/print/APB_print.vhd" \
+"../../../../../xoodoo/xoodoo_globals.vhd" \
+"../../../../../xoodoo/APB_xoodoo.vhd" \
 "../../../../xoodyak_SOC.srcs/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/picorv32/picorv32_apb_adapter.vhd" \
 "../../../../xoodyak_SOC.srcs/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/picorv32/picorv_mem_model.vhd" \
 "../../../../xoodyak_SOC.srcs/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/soc/soc.vhd" \
+"../../../../../xoodoo/xoodoo_permute.vhd" \
+"../../../../../xoodoo/xoodoo_round.vhd" \
 "../../../../xoodyak_SOC.srcs/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/soc/soc_tb.vhd" \
 
 # Do not sort compile order

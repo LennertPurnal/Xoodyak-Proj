@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1652359629" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/soc.dcp">
+  <File Type="VDS-TIMING-PB" Name="soc_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="soc_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="soc.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="soc_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="soc_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="soc_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="soc.vds"/>
+  <File Type="REPORTS-TCL" Name="soc_reports.tcl"/>
+  <File Type="PA-TCL" Name="soc.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/HWSW/picorv32/picorv32.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../picorv32/picorv32.v"/>
+        <Attr Name="ImportTime" Val="1645438090"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/soc/PKG_hwswcodesign.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../exercises/hwswcodesign-labs/3_soc/vhdl/soc/PKG_hwswcodesign.vhd"/>
+        <Attr Name="ImportTime" Val="1647250888"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/soc/APB_bus.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../exercises/hwswcodesign-labs/3_soc/vhdl/soc/APB_bus.vhd"/>
+        <Attr Name="ImportTime" Val="1647250888"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/fblocks/counter/APB_counter.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../exercises/hwswcodesign-labs/3_soc/vhdl/fblocks/counter/APB_counter.vhd"/>
+        <Attr Name="ImportTime" Val="1647250888"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../xoodoo/xoodoo_globals.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../xoodoo/APB_xoodoo.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/picorv32/picorv32_apb_adapter.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../exercises/hwswcodesign-labs/3_soc/vhdl/picorv32/picorv32_apb_adapter.vhd"/>
+        <Attr Name="ImportTime" Val="1647250888"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../xoodoo/xoodoo_permute.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../xoodoo/xoodoo_round.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/soc/soc.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../exercises/hwswcodesign-labs/3_soc/vhdl/soc/soc.vhd"/>
+        <Attr Name="ImportTime" Val="1647250888"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/HWSW/exercises/hwswcodesign-labs/3_soc/vhdl/fblocks/dummy/APB_dummy.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../exercises/hwswcodesign-labs/3_soc/vhdl/fblocks/dummy/APB_dummy.vhd"/>
+        <Attr Name="ImportTime" Val="1647250888"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="soc"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/soc.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design">
+      <Option Id="MoreOptsStr"><![CDATA[-mode out_of_context]]></Option>
+    </Step>
+  </Strategy>
+</GenRun>

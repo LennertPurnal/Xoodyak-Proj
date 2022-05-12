@@ -66,15 +66,39 @@ architecture Behavioural of APB_xoodoo is
     signal state_in     : x_state_type;
     signal state_out    : x_state_type;
     signal rounds       : std_logic_vector(C_DATA_WIDTH-1 downto 0);
-    signal cr           : std_logic_vector(8 downto 0);
-    signal sr           : std_logic_vector(8 downto 0);
+    signal cr           : std_logic_vector(7 downto 0);
+    signal sr           : std_logic_vector(7 downto 0);
 
     --address mapping
-    constant LOCAL_CR               : integer := x"00000000";
-    constant LOCAL_SR               : integer := x"00000004";
-    constant LOCAL_INSTATE_BASE     : integer := x"00000008";
-    constant LOCAL_ROUNDS           : integer := x"00000038";
-    constant LOCAL_OUTSTATE_BASE    : integer := x"0000003C";
+    constant LOCAL_CR               : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"00000000";
+    constant LOCAL_SR               : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"00000004";
+    constant LOCAL_ROUNDS           : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"00000038";
+
+    constant LOCAL_INSTATE_REG0     : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"00000008";
+    constant LOCAL_INSTATE_REG1     : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"0000000C";
+    constant LOCAL_INSTATE_REG2     : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"00000010";
+    constant LOCAL_INSTATE_REG3     : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"00000014";
+    constant LOCAL_INSTATE_REG4     : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"00000018";
+    constant LOCAL_INSTATE_REG5     : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"0000001C";
+    constant LOCAL_INSTATE_REG6     : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"00000020";
+    constant LOCAL_INSTATE_REG7     : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"00000024";
+    constant LOCAL_INSTATE_REG8     : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"00000028";
+    constant LOCAL_INSTATE_REG9     : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"0000002C";
+    constant LOCAL_INSTATE_REG10    : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"00000030";
+    constant LOCAL_INSTATE_REG11    : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"00000034";
+
+    constant LOCAL_OUTSTATE_REG0    : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"0000003C";
+    constant LOCAL_OUTSTATE_REG1    : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"00000040";
+    constant LOCAL_OUTSTATE_REG2    : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"00000044";
+    constant LOCAL_OUTSTATE_REG3    : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"00000048";
+    constant LOCAL_OUTSTATE_REG4    : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"0000004C";
+    constant LOCAL_OUTSTATE_REG5    : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"00000050";
+    constant LOCAL_OUTSTATE_REG6    : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"00000054";
+    constant LOCAL_OUTSTATE_REG7    : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"00000058";
+    constant LOCAL_OUTSTATE_REG8    : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"0000005C";
+    constant LOCAL_OUTSTATE_REG9    : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"00000060";
+    constant LOCAL_OUTSTATE_REG10   : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"00000064";
+    constant LOCAL_OUTSTATE_REG11   : std_logic_vector(C_DATA_WIDTH-1 downto 0) := x"00000068";
 
     component xoodoo_permute is
         port (
@@ -136,23 +160,25 @@ begin
     PREGISTER: process(PRESETn_i, PCLK_i)
     begin
         if PRESETn_i = '0' then 
-            registers <= (others => (others => '0'));
+            state_in <= ZERO_STATE;
+            cr <= x"00";
+            rounds <= x"00000000";
         elsif rising_edge(PCLK_i) then 
             if(load_reg_write = '1') then
                 case local_address is
                     when LOCAL_CR => cr <= masked_data(7 downto 0);
-                    when LOCAL_INSTATE_BASE => state_in(0)(0) <= masked_data;
-                    when (LOCAL_INSTATE_BASE + 4) => state_in(0)(1) <= masked_data;
-                    when (LOCAL_INSTATE_BASE + 8) => state_in(0)(2) <= masked_data;
-                    when (LOCAL_INSTATE_BASE + 12) => state_in(0)(3) <= masked_data;
-                    when (LOCAL_INSTATE_BASE + 16) => state_in(1)(0) <= masked_data;
-                    when (LOCAL_INSTATE_BASE + 20) => state_in(1)(1) <= masked_data;
-                    when (LOCAL_INSTATE_BASE + 24) => state_in(1)(2) <= masked_data;
-                    when (LOCAL_INSTATE_BASE + 28) => state_in(1)(3) <= masked_data;
-                    when (LOCAL_INSTATE_BASE + 32) => state_in(2)(0) <= masked_data;
-                    when (LOCAL_INSTATE_BASE + 36) => state_in(2)(1) <= masked_data;
-                    when (LOCAL_INSTATE_BASE + 40) => state_in(2)(2) <= masked_data;
-                    when (LOCAL_INSTATE_BASE + 44) => state_in(2)(3) <= masked_data;
+                    when LOCAL_INSTATE_REG0 => state_in(0)(0) <= masked_data;
+                    when LOCAL_INSTATE_REG1 => state_in(0)(1) <= masked_data;
+                    when LOCAL_INSTATE_REG2 => state_in(0)(2) <= masked_data;
+                    when LOCAL_INSTATE_REG3 => state_in(0)(3) <= masked_data;
+                    when LOCAL_INSTATE_REG4 => state_in(1)(0) <= masked_data;
+                    when LOCAL_INSTATE_REG5 => state_in(1)(1) <= masked_data;
+                    when LOCAL_INSTATE_REG6 => state_in(1)(2) <= masked_data;
+                    when LOCAL_INSTATE_REG7 => state_in(1)(3) <= masked_data;
+                    when LOCAL_INSTATE_REG8 => state_in(2)(0) <= masked_data;
+                    when LOCAL_INSTATE_REG9 => state_in(2)(1) <= masked_data;
+                    when LOCAL_INSTATE_REG10 => state_in(2)(2) <= masked_data;
+                    when LOCAL_INSTATE_REG11 => state_in(2)(3) <= masked_data;
                     when LOCAL_ROUNDS => rounds <= masked_data;
                     when others => null;
                 end case;
@@ -173,18 +199,18 @@ begin
                 case local_address is
                     when LOCAL_CR => outgoing_data <= x"000000" & cr;
                     when LOCAL_SR => outgoing_data <= x"000000" & sr;
-                    when LOCAL_OUTSTATE_BASE => outgoing_data <= state_out(0)(0);
-                    when (LOCAL_OUTSTATE_BASE + 4) => outgoing_data <= state_out(0)(1);
-                    when (LOCAL_OUTSTATE_BASE + 8) => outgoing_data <= state_out(0)(2);
-                    when (LOCAL_OUTSTATE_BASE + 12) => outgoing_data <= state_out(0)(3);
-                    when (LOCAL_OUTSTATE_BASE + 16) => outgoing_data <= state_out(1)(0);
-                    when (LOCAL_OUTSTATE_BASE + 20) => outgoing_data <= state_out(1)(1);
-                    when (LOCAL_OUTSTATE_BASE + 24) => outgoing_data <= state_out(1)(2);
-                    when (LOCAL_OUTSTATE_BASE + 28) => outgoing_data <= state_out(1)(3);
-                    when (LOCAL_OUTSTATE_BASE + 32) => outgoing_data <= state_out(2)(0);
-                    when (LOCAL_OUTSTATE_BASE + 36) => outgoing_data <= state_out(2)(1);
-                    when (LOCAL_OUTSTATE_BASE + 40) => outgoing_data <= state_out(2)(2);
-                    when (LOCAL_OUTSTATE_BASE + 44) => outgoing_data <= state_out(2)(3);
+                    when LOCAL_OUTSTATE_REG0 => outgoing_data <= state_out(0)(0);
+                    when LOCAL_OUTSTATE_REG1 => outgoing_data <= state_out(0)(1);
+                    when LOCAL_OUTSTATE_REG2 => outgoing_data <= state_out(0)(2);
+                    when LOCAL_OUTSTATE_REG3 => outgoing_data <= state_out(0)(3);
+                    when LOCAL_OUTSTATE_REG4 => outgoing_data <= state_out(1)(0);
+                    when LOCAL_OUTSTATE_REG5 => outgoing_data <= state_out(1)(1);
+                    when LOCAL_OUTSTATE_REG6 => outgoing_data <= state_out(1)(2);
+                    when LOCAL_OUTSTATE_REG7 => outgoing_data <= state_out(1)(3);
+                    when LOCAL_OUTSTATE_REG8 => outgoing_data <= state_out(2)(0);
+                    when LOCAL_OUTSTATE_REG9 => outgoing_data <= state_out(2)(1);
+                    when LOCAL_OUTSTATE_REG10 => outgoing_data <= state_out(2)(2);
+                    when LOCAL_OUTSTATE_REG11 => outgoing_data <= state_out(2)(3);
                     when others => outgoing_data <= (others => '0');
                 end case;
             else
