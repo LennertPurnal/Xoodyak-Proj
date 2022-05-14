@@ -27,7 +27,7 @@ LOAD build/Xoodyak.o
 LOAD build/firmware.o
 LOAD build/start.o
 
-.memory         0x0000000000000000      0x9b0
+.memory         0x0000000000000000      0x99c
                 0x0000000000000000                . = 0x0
  *(.init)
  .init          0x0000000000000000       0x94 build/start.o
@@ -82,21 +82,21 @@ LOAD build/start.o
  .rodata.str1.4
                 0x0000000000000824       0x17 build/firmware.o
  *fill*         0x000000000000083b        0x1 
- .text.startup  0x000000000000083c      0x11c build/firmware.o
+ .text.startup  0x000000000000083c      0x108 build/firmware.o
                 0x000000000000083c                main
- .comment       0x0000000000000958       0x1c build/firmware.o
+ .comment       0x0000000000000944       0x1c build/firmware.o
  .riscv.attributes
-                0x0000000000000958       0x1c build/firmware.o
- .data          0x0000000000000974        0x0 build/start.o
- .bss           0x0000000000000974        0x0 build/start.o
+                0x0000000000000944       0x1c build/firmware.o
+ .data          0x0000000000000960        0x0 build/start.o
+ .bss           0x0000000000000960        0x0 build/start.o
  .riscv.attributes
-                0x0000000000000974       0x1a build/start.o
- .data          0x000000000000098e        0x0 /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
- .bss           0x000000000000098e        0x0 /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
+                0x0000000000000960       0x1a build/start.o
+ .data          0x000000000000097a        0x0 /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
+ .bss           0x000000000000097a        0x0 /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
  .riscv.attributes
-                0x000000000000098e       0x1f /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
-                0x00000000000009b0                . = ALIGN (0x4)
- *fill*         0x00000000000009ad        0x3 
-                0x00000000000009b0                end = .
+                0x000000000000097a       0x1f /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a(div.o)
+                0x000000000000099c                . = ALIGN (0x4)
+ *fill*         0x0000000000000999        0x3 
+                0x000000000000099c                end = .
 LOAD /opt/riscv32/lib/gcc/riscv32-unknown-elf/11.1.0/libgcc.a
 OUTPUT(firmware.elf elf32-littleriscv)

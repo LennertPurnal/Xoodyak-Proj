@@ -114,62 +114,6 @@ static const uint32_t    RC[XOODYAK_ROUNDS] = {
 
 
 /**
- * @brief function for performing a single permutation round
- * 
- * @param stateAsWords pointer to state as array of 32bit vectors
- * @param rc round constant
- */
-static void Xoodoo_Round(uint32_t *stateAsWords, uint32_t rc){
-
-    unsigned int x, y;
-    uint32_t    B[XOODYAK_NUMOF_SHEETS*XOODYAK_NUMOF_PLANES];
-    uint32_t    P[XOODYAK_NUMOF_SHEETS];
-    uint32_t    E[XOODYAK_NUMOF_SHEETS];
-
-    //Theta
-    for (x=0; x<XOODYAK_NUMOF_SHEETS; ++x)
-        P[x] = stateAsWords[index(x,0)] ^ stateAsWords[index(x,1)] ^ stateAsWords[index(x,2)];
-    for (x=0; x<XOODYAK_NUMOF_SHEETS; ++x)
-        E[x] = ROTL32(P[(x-1)%4], 5) ^ ROTL32(P[(x-1)%4], 14);
-    for (x=0; x<XOODYAK_NUMOF_SHEETS; ++x)
-        for (y=0; y<XOODYAK_NUMOF_PLANES; ++y)
-            stateAsWords[index(x,y)] ^= E[x];
-
-    //Rho-west: plane shift 
-    for (x=0; x<XOODYAK_NUMOF_SHEETS; ++x) {
-        B[index(x,1)] = stateAsWords[index(x-1,1)];
-        B[index(x,2)] = ROTL32(stateAsWords[index(x,2)], 11);
-    }
-    for (x=0; x<XOODYAK_NUMOF_SHEETS; ++x) {
-        //copy back into state
-        stateAsWords[index(x,1)] = B[index(x,1)];
-        stateAsWords[index(x,2)] = B[index(x,2)];
-    }
-        
-    //Iota: round constant 
-    stateAsWords[0] ^= rc;
-
-    //Chi: non linear layer 
-    for (x=0; x<XOODYAK_NUMOF_SHEETS; ++x)
-        for (y=0; y<XOODYAK_NUMOF_PLANES; ++y)
-            B[index(x,y)] = stateAsWords[index(x,y)] ^ (~stateAsWords[index(x,y+1)] & stateAsWords[index(x,y+2)]);
-    for (x=0; x<XOODYAK_NUMOF_SHEETS; ++x)
-        for (y=0; y<XOODYAK_NUMOF_PLANES; ++y)
-            stateAsWords[index(x, y)] = B[index(x, y)]; //copy back into state
-
-    //Rho-east: plane shift */
-    for (x=0; x<XOODYAK_NUMOF_SHEETS; ++x) {
-        B[index(x,1)] = ROTL32(stateAsWords[index(x,1)], 1);
-        B[index(x,2)] = ROTL32(stateAsWords[index(x+2,2)], 8);
-    }
-    for (x=0; x<XOODYAK_NUMOF_SHEETS; ++x) {
-        stateAsWords[index(x,1)] = B[index(x,1)];
-        stateAsWords[index(x,2)] = B[index(x,2)];
-    }
-
-}
-
-/**
  * @brief main permutation function (performs 12 rounds of permutations for hashing)
  * 
  * @param state pointer to state object
