@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed May 11 09:45:35 2022
+# Make data base, printed on Sat May 14 11:38:05 2022
 
 # Variables
 
@@ -53,7 +53,7 @@ VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:37672
+JOURNAL_STREAM = 8:36491
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -77,13 +77,13 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 1068
+MANAGERPID = 1069
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
 LC_NAME = en_GB.UTF-8
 # environment
-VSCODE_CWD = /home/lennert/HWSW/xoodyak
+VSCODE_CWD = /home/lennert
 # environment
 GSETTINGS_SCHEMA_DIR = /snap/code/96/usr/share/glib-2.0/schemas
 # default
@@ -93,7 +93,7 @@ PATH = /home/lennert/tools/bit_to_bin:/tools/Xilinx/Vitis/2021.2/bin:/tools/Xili
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/laptopENVY:@/tmp/.ICE-unix/1380,unix/laptopENVY:/tmp/.ICE-unix/1380
+SESSION_MANAGER = local/laptopENVY:@/tmp/.ICE-unix/1383,unix/laptopENVY:/tmp/.ICE-unix/1383
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -111,7 +111,7 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = ece90f67a98647a89c74b38a21e57079
+INVOCATION_ID = c7b1a76c8fb84c7c9f7acfe825a8a9ba
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/96/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
@@ -135,7 +135,7 @@ PWD = /home/lennert/HWSW/xoodyak
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1334
+SSH_AGENT_PID = 1314
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -189,7 +189,7 @@ SHLVL = 1
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d3b48a93-b4aa-4558-b602-1a7bba51b22f.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-98b957f7-3325-4064-8d1b-157aa20af3cb.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -208,8 +208,6 @@ XDG_CURRENT_DESKTOP = Unity
 LC_TELEPHONE = en_GB.UTF-8
 # default
 MAKE_COMMAND := make
-# environment
-OLDPWD = /home/lennert/HWSW
 # default
 .VARIABLES := 
 # automatic
@@ -249,11 +247,11 @@ LC_ALL = C
 # environment
 GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/a98a7123_e353_4395_84b8_15971a65a9d2
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/49129380_3166_44e0_90bb_ece97d7c10bf
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.121
+GNOME_TERMINAL_SERVICE = :1.126
 # default
 SUFFIXES := 
 # environment
@@ -269,15 +267,16 @@ GJS_DEBUG_OUTPUT = stderr
 # default
 .RECIPEPREFIX := 
 # environment
+ 
 LC_ADDRESS = en_GB.UTF-8
 # environment
 LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 6761
+VSCODE_PID = 4070
 # variable set hash-table stats:
-# Load=132/1024=13%, Rehash=0, Collisions=20/154=13%
+# Load=131/1024=13%, Rehash=0, Collisions=20/153=13%
 
 # Pattern-specific Variable Values
 
@@ -285,12 +284,11 @@ VSCODE_PID = 6761
 
 # Directories
 
-# . (device 66308, inode 2802368): 7 files, no impossibilities.
+# . (device 66308, inode 2802368): 11 files, no impossibilities.
 
-# 7 files, no impossibilities in 1 directories.
+# 11 files, no impossibilities in 1 directories.
 
 # Implicit Rules
- 
 
 # No implicit rules.
 
@@ -338,12 +336,12 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 15 / storage = 134 B / avg = 8 B
-# current buf: size = 8162 B / used = 134 B / count = 15 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 19 / storage = 191 B / avg = 10 B
+# current buf: size = 8162 B / used = 191 B / count = 19 / avg = 10 B
 
-# strcache performance: lookups = 18 / hit rate = 16%
+# strcache performance: lookups = 22 / hit rate = 13%
 # hash-table stats:
-# Load=15/8192=0%, Rehash=0, Collisions=1/18=6%
-# Finished Make data base on Wed May 11 09:45:35 2022
+# Load=19/8192=0%, Rehash=0, Collisions=1/22=5%
+# Finished Make data base on Sat May 14 11:38:05 2022
 
  

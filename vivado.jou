@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Fri May 13 14:48:52 2022
+# Process ID: 203388
+# Current directory: /home/lennert/HWSW/xoodyak
+# Command line: vivado
+# Log file: /home/lennert/HWSW/xoodyak/vivado.log
+# Journal file: /home/lennert/HWSW/xoodyak/vivado.jou
+# Running On: laptopENVY, OS: Linux, CPU Frequency: 1437.689 MHz, CPU Physical cores: 4, Host memory: 16465 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/lennert/HWSW/xoodyak/hwswcd/hardware/xoodyak_SOC/xoodyak_SOC.xpr
+launch_simulation
+source soc_tb.tcl
+update_compile_order -fileset sources_1
+current_wave_config {Untitled 1}
+add_wave {{/soc_tb/soc_inst00/APB_xoodoo_inst00/xoodoo_permute_inst00}} 
+restart
+run 1 ms
+run 1 ms
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+close_sim
